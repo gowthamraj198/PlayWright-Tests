@@ -9,8 +9,6 @@ This project contains both UI tests and API tests using Playwright. The tests ar
 - **Playwright**
 - **npm**
 
-Refer to [installation steps](#installation-steps) below to install the required dependencies.
-
 ## Project Structure
 
 - **`tests/`**: Contains UI tests.
@@ -18,10 +16,37 @@ Refer to [installation steps](#installation-steps) below to install the required
 - **`playwright.config.ts`**: Configuration file for Playwright.
 - **`package.json`**: Contains scripts to run the tests.
 
-## Assumptions
+## Pre-requisites
+
+Ensure the following are installed on your machine:
 
 - Node.js is installed (version >= 18).
 - npm is installed.
+- Playwright is installed as a dev dependency.
+- Install all project dependencies using `npm install`.
+
+#### Refer to [installation steps](#installation-steps) below to install the required dependencies.
+
+
+## About the Tests
+
+- All assumptions, observations and limitations are documented as comments in the test files.
+- The tests are organized into separate directories for UI and API tests.
+- POM design pattern is used.
+- No cross browser or responsive testing is implemented.
+- The tests are configured to retry failed tests up to 2 times. If a test fails, it will be retried up to 2 times before failing.
+- No tagging of tests is implemented.
+- Unit level tests are not covered exhaustively. However some unit level tests are added to demonstrate the testing framework.
+- The tests are designed to run on a local environment. No CI/CD pipeline or dockerisation is added.
+
+
+#### Test files are inside the spec folders in the tests and api-tests directories.
+
+| Script     | Description                              |
+|------------|------------------------------------------|
+| `ui-test`  | Runs the UI tests in the `tests` folder. |
+| `api-test` | Runs the API tests in the `api-tests` folder. |
+
 
 ## Running the Tests
 
@@ -41,23 +66,10 @@ To run the API tests, use the following command:
 npm run api-test 
 ```
 
-### Retries
-
-The tests are configured to retry failed tests up to 2 times. If a test fails, it will be retried up to 2 times before failing.
-
 ## Test Reports
 
 The test reports are generated in HTML format and can be found in the `playwright-report` directory. To view the report, open the index.html file in a web browser.
 
-## Scripts
-
-### Note: 
-#### Test files are inside the spec folders in the tests and api-tests directories.
-
-| Script     | Description                              |
-|------------|------------------------------------------|
-| `ui-test`  | Runs the UI tests in the `tests` folder. |
-| `api-test` | Runs the API tests in the `api-tests` folder. |
 
 ## Configuration
 
