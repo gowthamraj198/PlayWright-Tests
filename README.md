@@ -51,6 +51,9 @@ The test reports are generated in HTML format and can be found in the `playwrigh
 
 ## Scripts
 
+### Note: 
+#### Test files are inside the spec folders in the tests and api-tests directories.
+
 | Script     | Description                              |
 |------------|------------------------------------------|
 | `ui-test`  | Runs the UI tests in the `tests` folder. |
